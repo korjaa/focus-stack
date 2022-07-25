@@ -137,3 +137,12 @@ and that also includes a simple GUI for selecting the files:
 
     make build/focus-stack.app
 
+Building into a Docker container
+--------------------------------
+Following command can be used to build a docker container:
+
+    make docker
+
+Using focus-stack from docker requires that all of the paths are relative and inside current directory.
+
+    ./focus-stack.sh ./path/folder/images*.jpg

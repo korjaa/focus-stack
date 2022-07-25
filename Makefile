@@ -131,3 +131,8 @@ build/focus-stack.AppImage: build/focus-stack build/linuxdeploy
 	touch build/AppDir/usr/share/icons/hicolor/scalable/apps/focus-stack.svg
 	VERSION=$(VERSION) build/linuxdeploy --appdir build/AppDir --output appimage
 	mv *.AppImage $@
+
+# Docker
+.PHONY: docker
+docker:
+	docker build -t focus-stack .
