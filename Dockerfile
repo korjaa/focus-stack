@@ -9,13 +9,15 @@ WORKDIR /tmp/build/
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		gosu \
+		libopencv-video4.5d \
+		libopencv-imgcodecs4.5d \
 		libopencv-dev \
 		build-essential \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& make \
 	&& make install \
 	&& rm -rf /tmp/build \
-	&& apt-get purge -y build-essential \
+	&& apt-get purge -y build-essential libopencv-dev \
 	&& apt-get autoremove -y
 
 ADD entrypoint.sh /usr/local/bin/
